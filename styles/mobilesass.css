@@ -12,11 +12,11 @@ button {
 /* Fonts */
 @font-face {
   font-family: "Messina Sans Mono", sans-serif, monospace;
-  src: url("/fonts/MessinaSansMono-Regular.woff2") local("MessinaSansMono-SemiBold.woff2") format("woff2");
+  src: url("./fonts/MessinaSansMono-Regular.woff2") local("MessinaSansMono-SemiBold.woff2") format("woff2");
 }
 @font-face {
   font-family: "Neue Montreal", sans-serif;
-  src: url("/fonts/NeueMontreal-Regular.woff2") local("NeueMontreal-Regular.woff2") format("woff2");
+  src: url("./fonts/NeueMontreal-Regular.woff2") local("NeueMontreal-Regular.woff2") format("woff2");
 }
 /*------------------------------------
  *   VARIABLES
