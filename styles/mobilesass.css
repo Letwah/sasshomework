@@ -1,29 +1,61 @@
 /* Global Styles  */
-
 *,
 :after,
 :before {
   box-sizing: border-box;
 }
 
-/* Fonts */
-
-@font-face {
-  font-family: "Messina Sans Mono", sans-serif, monospace;
-  src: url("/fonts/MessinaSansMono-Regular.woff2")
-    local("MessinaSansMono-SemiBold.woff2") format("woff2");
+button {
+  cursor: pointer;
 }
 
+/* Fonts */
+@font-face {
+  font-family: "Messina Sans Mono", sans-serif, monospace;
+  src: url("/fonts/MessinaSansMono-Regular.woff2") local("MessinaSansMono-SemiBold.woff2") format("woff2");
+}
 @font-face {
   font-family: "Neue Montreal", sans-serif;
-  src: url("/fonts/NeueMontreal-Regular.woff2")
-    local("NeueMontreal-Regular.woff2") format("woff2");
+  src: url("/fonts/NeueMontreal-Regular.woff2") local("NeueMontreal-Regular.woff2") format("woff2");
+}
+/*------------------------------------
+ *   VARIABLES
+ *------------------------------------*/
+/**GLOBAL COLORS**/
+/**SCREEN SIZES - not sure how to do this yet.....**/
+/*------------------------------------
+ *   MIXINS
+ *------------------------------------*/
+.flex-container {
+  padding: 2vw;
+  margin: 4vw;
+}
+
+.headfont {
+  font-family: "Neue Montreal", sans-serif;
+}
+
+.buttonfont {
+  font-family: "Neue Montreal", sans-serif;
+  font-size: 4vw;
+}
+
+.body {
+  font-family: "Neue Montreal", sans-serif;
+  font-size: 4vw;
+  color: #fffef4;
+}
+
+.body-small {
+  font-family: "Messina Sans Mono", sans-serif, monospace;
+  font-size: 2vw;
 }
 
 h1 {
-  font-family: "Neue Montreal", sans-serif;
-  text-align: center;
+  font-family: headfont();
+  color: #fffef4;
   font-size: 11.2vw;
+  text-align: center;
   font-style: normal;
   font-weight: 700;
   line-height: 92%;
@@ -31,52 +63,87 @@ h1 {
   text-transform: uppercase;
   /* stop line wrap */
   white-space: nowrap;
-
   margin: 0;
 }
 
 h2 {
-  font-family: "Neue Montreal", sans-serif;
+  font-family: headfont();
+  color: #929292;
+  font-size: 4vw;
   line-height: 140%;
   font-size: 4vw;
-  /* font-size: 1.3vw; */
   letter-spacing: 0.01em;
   text-transform: uppercase;
-  color: #929292;
 }
 
 p {
-  font-family: "Neue Montreal", sans-serif;
+  font-family: body-small();
   font-size: 4vw;
+  color: #fffef4;
 }
 
 p.p-col-1 {
-  font-family: "Neue Montreal", sans-serif;
+  font-family: body();
   line-height: 125%;
-  /* font-size: 1vw; */
   letter-spacing: 0.01em;
+  color: #fffef4;
+}
+
+p.p-bold-col2 {
+  text-align: justify;
+}
+
+p.p-bold-col2-sm {
+  text-align: left;
+  padding-left: 5vw;
+}
+
+.accordian-trigger {
+  text-align: right;
+}
+
+.accordian-trigger img {
+  width: 4vw;
+}
+
+img {
+  /*  To contain the image to the confines of the div  */
+  max-width: 92vw;
 }
 
 button.button-list p.p-bold-col2-sm,
 footer p,
 .project-actions-link {
-  font-family: monospace;
+  font-family: body-small();
   margin: 0;
-  /* font-size: 0.8vw; */
   font-size: 3.2vw;
 }
 
-/* attempt at sizing arrow next to link in 3rd col  */
-
-a.project-actions-link svg.home_arrow {
-  max-width: 0.5vw;
+button.button-list p.p-bold-col2 {
+  font-family: body();
+  font-weight: 700;
 }
 
-button.button-list p.p-bold-col2 {
-  font-family: "Neue Montreal", sans-serif;
-  font-weight: 700;
-  font-size: 4vw;
-  /* font-size: 1.3vw; */
+body {
+  background-color: #000000;
+}
+
+@media screen and (min-width: 800px) {
+  button.button-list p.p-bold-col2-sm,
+  footer p,
+  .project-actions-link {
+    font-size: 0.8vw;
+  }
+  p.p-col-1 {
+    font-size: 1vw;
+  }
+  button.button-list p.p-bold-col2 {
+    font-size: 1.3vw;
+  }
+}
+/* attempt at sizing arrow next to link in 3rd col  */
+a.project-actions-link svg.home_arrow {
+  max-width: 0.5vw;
 }
 
 ul.p-col-1 {
@@ -85,15 +152,6 @@ ul.p-col-1 {
 
 ul li {
   list-style: none;
-}
-
-button {
-  cursor: pointer;
-}
-
-body {
-  color: #fffef4;
-  background-color: #000;
 }
 
 .flex-container {
@@ -106,29 +164,13 @@ body {
   margin: 2vw 2vw 2vw 2vw;
 }
 
-/* 
-@media only screen and (min-width: 800px) {
-   {
-    .header-top {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-    }
-  }
-} */
-/* styling the header  */
-
 .header-container {
   display: block;
   width: 92vw;
   position: relative;
-  /* max-width: calc(100vw - (2 * 4.267vw)); */
   margin-left: auto;
   margin-right: auto;
 }
-
-/* .header-top {
-  padding-top: 0.2vw;
-  padding-bottom: 0.2vw;
-} */
 
 .header-top {
   display: grid;
@@ -151,13 +193,12 @@ body {
 }
 
 /* size the icons desktop */
-.icons img {
-  max-width: 25px;
-  margin: 2px;
+@media screen and (min-width: 800px) {
+  .icons img {
+    max-width: 25px;
+  }
 }
-
 /* contact button */
-
 .header-button {
   grid-column-start: 4;
   align-items: flex-end;
@@ -165,26 +206,25 @@ body {
 
 div.header-button button {
   grid-column: 4;
-  font-family: "Neue Montreal", sans-serif;
-
-  /* change this to 1.1vw for desktop  */
+  font-family: body();
   font-size: 5vw;
   font-weight: 700;
   margin: 0 0 0 20px;
-  /* padding: 8.4px 16.8px 8.4px 16.8px; */
   border: solid 1px #00ff6a;
-
   color: #00ff6a;
   background-color: transparent;
   text-align: end;
-
   padding: 1vw 2vw;
   border-radius: 2vw;
-
-  /* padding: 0.2777777778vw 0.5555555556vw;
-  border-radius: 0.5555555556vw; */
 }
 
+@media screen and (min-width: 800px) {
+  div.header-button button {
+    font-size: 1.1vw;
+    padding: 8.4px 16.8px 8.4px 16.8px;
+    border-radius: 0.6vw;
+  }
+}
 .separator {
   width: 92vw;
   display: flex;
@@ -202,25 +242,21 @@ div.header-button button {
   align-items: center;
 }
 
-/* desktop
-.separator-icon {
-  display: flex;
-
-  width: 0.8333333333vw;
-  height: 0.8333333333vw;
-  fill: grey;
-} */
-
 .separator-icon {
   display: flex;
   justify-content: center;
   width: 4vw;
   height: 4vw;
-  fill: grey;
+  fill: #929292;
 }
 
+@media screen and (min-width: 800px) {
+  .separator-icon {
+    width: 0.8333333333vw;
+    height: 0.8333333333vw;
+  }
+}
 /* styling the header title */
-
 div.header-title {
   width: 92vw;
   text-shadow: 0 0 20px;
@@ -229,17 +265,6 @@ div.header-title {
 }
 
 /* marquee style  */
-
-/* DESKTOP
-.header-marquee {
-  filter: blur(1.5px);
- 
-}
-
-.header-marquee:hover {
-  filter: blur(0px);
-} */
-
 .header-marquee {
   grid-column: span 4;
   display: inline-block;
@@ -257,15 +282,22 @@ div.marquee-inner {
   flex-direction: row;
   white-space: nowrap;
 }
+
 span.header-marquee-separator {
   margin: 0 1.1111111111vw;
 }
 
+@media screen and (min-width: 800px) {
+  .header-marquee {
+    filter: blur(1.5px);
+  }
+  .header-marquee:hover {
+    filter: blur(0px);
+  }
+}
 /* end marquee */
-
 /* CONTACT FORM HIDE using opacity UNTIL CONTACT CLICKED */
-
-.contact-heading > .separator {
+.contact-heading .separator {
   width: 96vw;
 }
 
@@ -296,7 +328,6 @@ span.header-marquee-separator {
 
 /* 
 MAIN LAYOUT  */
-
 .layout-main {
   display: flex;
   /* overflow: visible; */
@@ -308,29 +339,18 @@ MAIN LAYOUT  */
   grid-template-columns: 1fr 1fr 1fr;
 }
 
-/* 
-
-for desktop
-.main-grid {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  grid-column-gap: 1.67vw;
-} */
-
+@media screen and (min-width: 800px) {
+  .main-grid {
+    grid-template-columns: repeat(8, 1fr);
+    grid-column-gap: 1.67vw;
+  }
+}
 section.col1 {
   grid-column: span 4;
-
   display: flex;
   flex-direction: column;
   position: relative;
   /* height: 80vh; */
-
-  /* no border on mobile  */
-
-  /*   
-  border-right: 1px solid grey;
-  padding-right: 1.6vw; */
-
   order: 2;
 }
 
@@ -338,34 +358,21 @@ section.col1 {
 .col2-title,
 .col3-title {
   display: flex;
-  /* position: sticky; */
   top: 0;
-  background-color: #000;
+  background-color: #000000;
 }
 
 div.scrolling {
   flex-grow: 1;
   display: block;
   position: relative;
-
-  /* show these on desktop */
-  /* overflow: scroll;
-  height: 80vh; */
   padding-bottom: 4.4444444444vh;
 }
 
 section.col2 {
   grid-column: span 4;
   position: relative;
-  /* overflow: scroll; */
-  /* height: 80vh; */
   padding-bottom: 4.4444444444vh;
-
-  /* no border on mobile  */
-
-  /*   
-  border-right: 1px solid grey;
-  padding-right: 1.6vw; */
   order: 0;
 }
 
@@ -382,7 +389,6 @@ ul li.projects-list {
   overflow-y: scroll;
   height: 80vh;
   padding-bottom: 4.4444444444vh;
-
   width: 100%;
 }
 
@@ -413,10 +419,8 @@ button.button-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
-
   align-items: center;
   width: 100%;
-
   background-color: transparent;
   color: #fffef4;
   padding: 0;
@@ -432,28 +436,28 @@ button.button-list:hover {
   transition: color 0.5s ease-in-out;
 }
 
-p.p-bold-col2 {
-  text-align: justify;
+@media screen and (min-width: 800px) {
+  section.col1 {
+    border-right: 1px solid grey;
+    padding-right: 1.6vw;
+    order: inherit;
+  }
+  .col1-title,
+  .col2-title,
+  .col3-title {
+    position: sticky;
+  }
+  div.scrolling {
+    overflow: scroll;
+    height: 80vh;
+  }
+  section.col2 {
+    overflow: scroll;
+    height: 80vh;
+    border-right: 1px solid #929292;
+    padding-right: 1.6vw;
+  }
 }
-
-p.p-bold-col2-sm {
-  text-align: left;
-  padding-left: 5vw;
-}
-
-.accordian-trigger {
-  text-align: right;
-}
-
-.accordian-trigger img {
-  width: 4vw;
-}
-
-img {
-  /*  To contain the image to the confines of the div  */
-  max-width: 92vw;
-}
-
 div.image-mobile-2,
 div.image-mobile-3,
 div.image-mobile-1 {
@@ -467,17 +471,11 @@ div.image-mobile-3::after,
 div.image-mobile-1::after {
   display: block;
   position: relative;
-  background-image: linear-gradient(
-    to bottom,
-    rgba(255, 0, 0, 0),
-    rgb(0, 0, 0)
-  );
-
+  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgb(0, 0, 0));
   margin-top: -150px;
   height: 150px;
   width: 92vw;
   content: "";
-
   color: #00ff6a;
   opacity: 1;
   z-index: 9;
@@ -488,111 +486,90 @@ div.image-mobile-3 {
 }
 
 section.col3 {
-  /* 
-  hide this on mobile  */
   display: none;
-
-  grid-column: span 4;
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: auto;
-  height: 80vh;
-  padding-bottom: 4.4444444444vh;
 }
 
-.col3-title {
-  display: flex;
-  justify-content: space-between;
+@media screen and (min-width: 800px) {
+  section.col3 {
+    display: visible;
+    grid-column: span 4;
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: 80vh;
+    padding-bottom: 4.4444444444vh;
+  }
+  .col3-title {
+    display: flex;
+    justify-content: space-between;
+  }
+  .col3-title h2 {
+    display: flex;
+    position: sticky;
+    top: 10px;
+  }
+  .project-actions-button {
+    font-family: "Messina Sans Mono", monospace;
+    background-color: transparent;
+    color: #fffef4;
+    border: none;
+    font-size: 0.8vw;
+  }
+  a.project-actions-link svg {
+    width: 10px;
+  }
+  a.project-actions-link {
+    font-family: "Messina Sans Mono", monospace;
+    color: #00ff6a;
+  }
+  .project-images-cont {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    grid-gap: 0.5vw;
+    margin-bottom: 0.5vw;
+  }
+  img.full,
+  img.half {
+    border-radius: 0.5555555556vw;
+  }
+  img.full {
+    -o-object-fit: cover;
+       object-fit: cover;
+    grid-column: span 2;
+    width: 100%;
+    max-height: 100%;
+  }
+  img.half {
+    -o-object-fit: cover;
+       object-fit: cover;
+    grid-column: span 1;
+    width: 100%;
+    max-height: 100%;
+    box-sizing: border-box;
+  }
+  /* 
+  desktop col 3 only  */
+  a .hometrigger {
+    width: 1.6666666667vw;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+  }
 }
-
-.col3-title h2 {
-  display: flex;
-  position: sticky;
-  top: 10px;
-}
-
-.project-actions-button {
-  font-family: "Messina Sans Mono", monospace;
-  background-color: transparent;
-  color: #fffef4;
-  border: none;
-  font-size: 0.8vw;
-}
-
-a.project-actions-link svg {
-  width: 10px;
-}
-
-a.project-actions-link {
-  font-family: "Messina Sans Mono", monospace;
-  color: #00ff6a;
-}
-
-.project-images-cont {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  overflow: hidden;
-  grid-gap: 0.5vw;
-  margin-bottom: 0.5vw;
-}
-
-img.full,
-img.half {
-  border-radius: 0.5555555556vw;
-}
-
-img.full {
-  object-fit: cover;
-  grid-column: span 2;
-
-  width: 100%;
-  max-height: 100%;
-}
-
-img.half {
-  object-fit: cover;
-  grid-column: span 1;
-  width: 100%;
-  max-height: 100%;
-  box-sizing: border-box;
-}
-
-/* 
-desktop col 3 only  */
-a .hometrigger {
-  width: 1.6666666667vw;
-  position: sticky;
-  top: 0;
-  z-index: 1;
-}
-
-/* FOOTER STUFF YO 
-
-footer.separator {
-  display: grid;
-  grid-column: span 8;
-  margin: 0 0.5vw 0 0.5vw;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: 0%;
-  height: 1px;
-  background-color: grey;
-}
-
-
-*/
-
 .footer-container {
   width: 92vw;
   height: 100vh;
 }
+
 .footer-grid {
   width: 92vw;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: auto;
   row-gap: 4.8vw;
-  column-gap: 4vw;
+  -moz-column-gap: 4vw;
+       column-gap: 4vw;
 }
 
 .footer-body {
@@ -604,19 +581,6 @@ footer ul {
   padding-left: 0;
   width: 100vw;
 }
-
-/* 
-
-DESKTOP
-.footer-body {
-  display: flex;
-  flex-direction: row;
-} */
-
-/* 
- DESKTOP 
-.footer-grid {
-  width: 100vw;} */
 
 a.footer-links,
 a.project-actions-link {
@@ -658,14 +622,23 @@ ul div.mob-footer-4 {
   grid-column-start: 1;
   grid-column-end: 3;
 }
-/* For mobile phones:
-@media only screen and (max-width: 800px) {
-  div.container {
-  }
-}
 
-For desktop: 
 @media only screen and (min-width: 800px) {
-  div.container {
+  .footer-grid {
+    width: 100vw;
   }
-} */
+  .footer-body {
+    display: flex;
+    flex-direction: row;
+  }
+  footer.separator {
+    display: grid;
+    grid-column: span 8;
+    margin: 0 0.5vw 0 0.5vw;
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    height: 1px;
+    background-color: #929292;
+  }
+}/*# sourceMappingURL=mobilesass.css.map */
