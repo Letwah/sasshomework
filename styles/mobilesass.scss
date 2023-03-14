@@ -55,7 +55,7 @@ $display-off: none;
 }
 
 .flex-container {
-  @include spacing(2vw, 4vw);
+  @include spacing(2vw, 2vw);
 }
 
 @mixin headfont {
@@ -201,6 +201,10 @@ ul.p-col-1 {
   padding-left: 0;
 }
 
+li.p-col-1-list p {
+  margin: 0;
+}
+
 ul {
   li {
     list-style: none;
@@ -213,16 +217,13 @@ ul {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 92vw;
-  /* STOPS SIDE SCROLL */
-  overflow-x: hidden;
-  margin: 2vw 2vw 2vw 2vw;
 }
 
 .header-container {
   display: block;
-  width: 92vw;
+  width: 100%;
   position: relative;
+
   margin-left: auto;
   margin-right: auto;
 }
@@ -548,8 +549,7 @@ button.button-list:hover {
 div.image-mobile-2,
 div.image-mobile-3,
 div.image-mobile-1 {
-  max-width: 92vw;
-  width: 800px;
+  width: 100%;
   margin: 0;
 }
 
@@ -584,7 +584,7 @@ section.col3 {
 
 @media screen and (min-width: 800px) {
   section.col3 {
-    display: $display-on;
+    display: $display-on();
     grid-column: span 4;
     position: relative;
     overflow-x: hidden;
@@ -658,6 +658,13 @@ desktop col 3 only  */
     top: 0;
     z-index: 1;
   }
+
+  // hide mobile images on desktop
+  div.image-mobile-2,
+  div.image-mobile-3,
+  div.image-mobile-1 {
+    display: $display-off;
+  }
 }
 
 // FOOTER YO!
@@ -666,6 +673,7 @@ desktop col 3 only  */
   width: 92vw;
   height: 100vh;
 }
+
 .footer-grid {
   width: 92vw;
   display: grid;
@@ -688,11 +696,15 @@ footer ul {
 a.footer-links,
 a.project-actions-link {
   color: #fffef4;
-  text-decoration: none;
+
   font-family: "Courier New", Courier, monospace;
   transition: all 0.95s cubic-bezier(0.19, 1, 0.22, 1);
   font-weight: 400;
   line-height: 200%;
+}
+
+a.project-actions-link {
+  text-decoration: none;
 }
 
 a.footer-links:hover,
