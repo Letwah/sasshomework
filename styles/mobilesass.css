@@ -11,12 +11,12 @@ button {
 
 /* Fonts */
 @font-face {
-  font-family: "Messina Sans Mono", sans-serif, monospace;
-  src: url("./fonts/MessinaSansMono-Regular.woff2") local("MessinaSansMono-SemiBold.woff2") format("woff2");
+  font-family: "IBM Plex Mono", monospace;
+  src: url("/fonts/IBMPlexMono-Medium.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Neue Montreal", sans-serif;
-  src: url("./fonts/NeueMontreal-Regular.woff2") local("NeueMontreal-Regular.woff2") format("woff2");
+  font-family: "Switzer Bold", sans-serif;
+  src: url("/fonts/Switzer-Bold.woff2") format("woff2");
 }
 /*------------------------------------
  *   VARIABLES
@@ -31,33 +31,13 @@ button {
   margin: 4vw;
 }
 
-.headfont {
-  font-family: "Neue Montreal", sans-serif;
-}
-
-.buttonfont {
-  font-family: "Neue Montreal", sans-serif;
-  font-size: 4vw;
-}
-
-.body {
-  font-family: "Neue Montreal", sans-serif;
-  font-size: 4vw;
-  color: #fffef4;
-}
-
-.body-small {
-  font-family: "Messina Sans Mono", sans-serif, monospace;
-  font-size: 2vw;
-}
-
 h1 {
-  font-family: headfont();
+  font-family: "Switzer Bold", sans-serif;
   color: #fffef4;
   font-size: 11.2vw;
   text-align: center;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 92%;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -67,7 +47,7 @@ h1 {
 }
 
 h2 {
-  font-family: headfont();
+  font-family: "Switzer Bold", sans-serif;
   color: #929292;
   font-size: 4vw;
   line-height: 140%;
@@ -77,13 +57,17 @@ h2 {
 }
 
 p {
-  font-family: body-small();
+  font-family: "Switzer Bold", sans-serif;
+  font-size: 4vw;
+  color: #fffef4;
   font-size: 4vw;
   color: #fffef4;
 }
 
 p.p-col-1 {
-  font-family: body();
+  font-family: "Switzer Bold", sans-serif;
+  font-size: 4vw;
+  color: #fffef4;
   line-height: 125%;
   letter-spacing: 0.01em;
   color: #fffef4;
@@ -114,13 +98,16 @@ img {
 button.button-list p.p-bold-col2-sm,
 footer p,
 .project-actions-link {
-  font-family: body-small();
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 2vw;
   margin: 0;
   font-size: 3.2vw;
 }
 
 button.button-list p.p-bold-col2 {
-  font-family: body();
+  font-family: "Switzer Bold", sans-serif;
+  font-size: 4vw;
+  color: #fffef4;
   font-weight: 700;
 }
 
@@ -206,7 +193,9 @@ ul li {
 
 div.header-button button {
   grid-column: 4;
-  font-family: body();
+  font-family: "Switzer Bold", sans-serif;
+  font-size: 4vw;
+  color: #fffef4;
   font-size: 5vw;
   font-weight: 700;
   margin: 0 0 0 20px;
@@ -252,8 +241,8 @@ div.header-button button {
 
 @media screen and (min-width: 800px) {
   .separator-icon {
-    width: 0.8333333333vw;
-    height: 0.8333333333vw;
+    width: 0.8vw;
+    height: 0.8vw;
   }
 }
 /* styling the header title */
@@ -284,7 +273,7 @@ div.marquee-inner {
 }
 
 span.header-marquee-separator {
-  margin: 0 1.1111111111vw;
+  margin: 0 1.1vw;
 }
 
 @media screen and (min-width: 800px) {
@@ -366,13 +355,13 @@ div.scrolling {
   flex-grow: 1;
   display: block;
   position: relative;
-  padding-bottom: 4.4444444444vh;
+  padding-bottom: 4.5vh;
 }
 
 section.col2 {
   grid-column: span 4;
   position: relative;
-  padding-bottom: 4.4444444444vh;
+  padding-bottom: 4.5vh;
   order: 0;
 }
 
@@ -388,7 +377,7 @@ ul li.projects-list {
   overflow-x: hidden;
   overflow-y: scroll;
   height: 80vh;
-  padding-bottom: 4.4444444444vh;
+  padding-bottom: 4.5vh;
   width: 100%;
 }
 
@@ -497,7 +486,7 @@ section.col3 {
     overflow-x: hidden;
     overflow-y: auto;
     height: 80vh;
-    padding-bottom: 4.4444444444vh;
+    padding-bottom: 4.5vh;
   }
   .col3-title {
     display: flex;
@@ -531,7 +520,7 @@ section.col3 {
   }
   img.full,
   img.half {
-    border-radius: 0.5555555556vw;
+    border-radius: 0.56vw;
   }
   img.full {
     -o-object-fit: cover;
@@ -551,7 +540,7 @@ section.col3 {
   /* 
   desktop col 3 only  */
   a .hometrigger {
-    width: 1.6666666667vw;
+    width: 1.7vw;
     position: sticky;
     top: 0;
     z-index: 1;

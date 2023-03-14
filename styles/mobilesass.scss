@@ -13,15 +13,13 @@ button {
 /* Fonts */
 
 @font-face {
-  font-family: "Messina Sans Mono", sans-serif, monospace;
-  src: url("./fonts/MessinaSansMono-Regular.woff2")
-    local("MessinaSansMono-SemiBold.woff2") format("woff2");
+  font-family: "IBM Plex Mono", monospace;
+  src: url("/fonts/IBMPlexMono-Medium.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Neue Montreal", sans-serif;
-  src: url("./fonts/NeueMontreal-Regular.woff2")
-    local("NeueMontreal-Regular.woff2") format("woff2");
+  font-family: "Switzer Bold", sans-serif;
+  src: url("/fonts/Switzer-Bold.woff2") format("woff2");
 }
 
 /*------------------------------------
@@ -60,33 +58,33 @@ $display-off: none;
   @include spacing(2vw, 4vw);
 }
 
-.headfont {
-  font-family: "Neue Montreal", sans-serif;
+@mixin headfont {
+  font-family: "Switzer Bold", sans-serif;
 }
 
-.buttonfont {
-  font-family: "Neue Montreal", sans-serif;
+@mixin buttonfont {
+  font-family: "Switzer Bold", sans-serif;
   font-size: 4vw;
 }
 
-.body {
-  font-family: "Neue Montreal", sans-serif;
+@mixin body {
+  font-family: "Switzer Bold", sans-serif;
   font-size: 4vw;
   color: $white;
 }
 
-.body-small {
-  font-family: "Messina Sans Mono", sans-serif, monospace;
+@mixin body-small {
+  font-family: "IBM Plex Mono", monospace;
   font-size: 2vw;
 }
 
 h1 {
-  font-family: headfont();
+  @include headfont;
   color: $white;
   font-size: 11.2vw;
   text-align: center;
   font-style: normal;
-  font-weight: 700;
+  font-weight: 900;
   line-height: 92%;
   letter-spacing: -0.02em;
   text-transform: uppercase;
@@ -97,7 +95,7 @@ h1 {
 }
 
 h2 {
-  font-family: headfont();
+  @include headfont;
   color: $grey;
   font-size: 4vw;
   line-height: 140%;
@@ -107,13 +105,13 @@ h2 {
 }
 
 p {
-  font-family: body-small();
+  @include body;
   font-size: 4vw;
   color: $white;
 }
 
 p.p-col-1 {
-  font-family: body();
+  @include body;
   line-height: 125%;
   letter-spacing: 0.01em;
   color: $white;
@@ -145,14 +143,14 @@ img {
 button.button-list p.p-bold-col2-sm,
 footer p,
 .project-actions-link {
-  font-family: body-small();
+  @include body-small;
   margin: 0;
   font-size: 3.2vw;
 }
 
 button.button-list {
   p.p-bold-col2 {
-    font-family: body();
+    @include body;
     font-weight: 700;
   }
 }
@@ -259,7 +257,7 @@ ul {
 div.header-button {
   button {
     grid-column: 4;
-    font-family: body();
+    @include body;
     font-size: 5vw;
     font-weight: 700;
     margin: 0 0 0 20px;
@@ -312,8 +310,8 @@ div.header-button {
 
 @media screen and (min-width: 800px) {
   .separator-icon {
-    width: 0.8333333333vw;
-    height: 0.8333333333vw;
+    width: 0.8vw;
+    height: 0.8vw;
   }
 }
 
@@ -346,7 +344,7 @@ div.marquee-inner {
   white-space: nowrap;
 }
 span.header-marquee-separator {
-  margin: 0 1.1111111111vw;
+  margin: 0 1.1vw;
 }
 
 @media screen and (min-width: 800px) {
@@ -436,13 +434,13 @@ div.scrolling {
   flex-grow: 1;
   display: block;
   position: relative;
-  padding-bottom: 4.4444444444vh;
+  padding-bottom: 4.5vh;
 }
 
 section.col2 {
   grid-column: span 4;
   position: relative;
-  padding-bottom: 4.4444444444vh;
+  padding-bottom: 4.5vh;
 
   order: 0;
 }
@@ -459,7 +457,7 @@ ul li.projects-list {
   overflow-x: hidden;
   overflow-y: scroll;
   height: 80vh;
-  padding-bottom: 4.4444444444vh;
+  padding-bottom: 4.5vh;
 
   width: 100%;
 }
@@ -578,13 +576,13 @@ section.col3 {
 
 @media screen and (min-width: 800px) {
   section.col3 {
-    display: $display-on();
+    display: $display-on;
     grid-column: span 4;
     position: relative;
     overflow-x: hidden;
     overflow-y: auto;
     height: 80vh;
-    padding-bottom: 4.4444444444vh;
+    padding-bottom: 4.5vh;
   }
 
   .col3-title {
@@ -625,7 +623,7 @@ section.col3 {
 
   img.full,
   img.half {
-    border-radius: 0.5555555556vw;
+    border-radius: 0.56vw;
   }
 
   img.full {
@@ -647,7 +645,7 @@ section.col3 {
   /* 
 desktop col 3 only  */
   a .hometrigger {
-    width: 1.6666666667vw;
+    width: 1.7vw;
     position: sticky;
     top: 0;
     z-index: 1;
@@ -697,7 +695,7 @@ a.project-actions-link:hover {
 }
 
 .muted {
-  color: #929292;
+  color: $grey;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
