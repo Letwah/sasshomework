@@ -11,12 +11,12 @@ button {
 
 /* Fonts */
 @font-face {
-  font-family: "IBM Plex Mono", monospace;
-  src: url("/fonts/IBMPlexMono-Medium.woff2") format("woff2");
+  font-family: "Messina Sans", monospace;
+  src: url("/fonts/MessinaSansMono-SemiBold.woff2") format("woff2");
 }
 @font-face {
-  font-family: "Switzer Bold", sans-serif;
-  src: url("/fonts/Switzer-Bold.woff2") format("woff2");
+  font-family: "Neue Montreal", sans-serif;
+  src: url("/fonts/NeueMontreal-Regular.woff2") format("woff2");
 }
 /*------------------------------------
  *   VARIABLES
@@ -32,7 +32,8 @@ button {
 }
 
 h1 {
-  font-family: "Switzer Bold", sans-serif;
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: 700;
   color: #fffef4;
   font-size: 11.2vw;
   text-align: center;
@@ -47,7 +48,8 @@ h1 {
 }
 
 h2 {
-  font-family: "Switzer Bold", sans-serif;
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: 700;
   color: #929292;
   font-size: 4vw;
   line-height: 140%;
@@ -57,7 +59,8 @@ h2 {
 }
 
 p {
-  font-family: "Switzer Bold", sans-serif;
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: 400;
   font-size: 4vw;
   color: #fffef4;
   font-size: 4vw;
@@ -65,7 +68,8 @@ p {
 }
 
 p.p-col-1 {
-  font-family: "Switzer Bold", sans-serif;
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: 400;
   font-size: 4vw;
   color: #fffef4;
   line-height: 125%;
@@ -96,16 +100,25 @@ img {
 }
 
 button.button-list p.p-bold-col2-sm,
-footer p,
 .project-actions-link {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: 400;
+  font-size: 4vw;
+  color: #fffef4;
+  margin: 0;
+  font-size: 3.2vw;
+}
+
+footer p {
+  font-family: "Messina Sans", monospace;
   font-size: 2vw;
   margin: 0;
   font-size: 3.2vw;
 }
 
 button.button-list p.p-bold-col2 {
-  font-family: "Switzer Bold", sans-serif;
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: 400;
   font-size: 4vw;
   color: #fffef4;
   font-weight: 700;
@@ -119,6 +132,8 @@ body {
   button.button-list p.p-bold-col2-sm,
   footer p,
   .project-actions-link {
+    font-family: "Messina Sans", monospace;
+    font-size: 2vw;
     font-size: 0.8vw;
   }
   p.p-col-1 {
@@ -193,7 +208,8 @@ ul li {
 
 div.header-button button {
   grid-column: 4;
-  font-family: "Switzer Bold", sans-serif;
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: 400;
   font-size: 4vw;
   color: #fffef4;
   font-size: 5vw;

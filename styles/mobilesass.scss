@@ -13,13 +13,13 @@ button {
 /* Fonts */
 
 @font-face {
-  font-family: "IBM Plex Mono", monospace;
-  src: url("/fonts/IBMPlexMono-Medium.woff2") format("woff2");
+  font-family: "Messina Sans", monospace;
+  src: url("/fonts/MessinaSansMono-SemiBold.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "Switzer Bold", sans-serif;
-  src: url("/fonts/Switzer-Bold.woff2") format("woff2");
+  font-family: "Neue Montreal", sans-serif;
+  src: url("/fonts/NeueMontreal-Regular.woff2") format("woff2");
 }
 
 /*------------------------------------
@@ -59,22 +59,24 @@ $display-off: none;
 }
 
 @mixin headfont {
-  font-family: "Switzer Bold", sans-serif;
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: 700;
 }
 
 @mixin buttonfont {
-  font-family: "Switzer Bold", sans-serif;
+  font-family: "Neue Montreal", sans-serif;
   font-size: 4vw;
 }
 
 @mixin body {
-  font-family: "Switzer Bold", sans-serif;
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: 400;
   font-size: 4vw;
   color: $white;
 }
 
 @mixin body-small {
-  font-family: "IBM Plex Mono", monospace;
+  font-family: "Messina Sans", monospace;
   font-size: 2vw;
 }
 
@@ -141,9 +143,14 @@ img {
 }
 
 button.button-list p.p-bold-col2-sm,
-footer p,
 .project-actions-link {
-  @include body-small;
+  @include body();
+  margin: 0;
+  font-size: 3.2vw;
+}
+
+footer p {
+  @include body-small();
   margin: 0;
   font-size: 3.2vw;
 }
@@ -165,6 +172,7 @@ body {
   button.button-list p.p-bold-col2-sm,
   footer p,
   .project-actions-link {
+    @include body-small();
     font-size: 0.8vw;
   }
 
