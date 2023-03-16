@@ -283,22 +283,25 @@ ul li.projects-list {
 }
 /* attempt at syling pseduo element on hover  */
 ul li.col-2-li::before {
-  content: "";
+  display: none;
+
+  content: "H";
   height: 0.8vw;
   width: 0.8vw;
-  position: absolute;
-  left: 1%;
-  top: 50%;
+  /* position: absolute;
+  left: 1%; */
+  /* top: 50%; */
   border-radius: 100%;
   background-color: #00ff6a;
   filter: blur(3px);
-  opacity: 0;
-  transform: translateY(-50%);
+  /* opacity: 1; */
+  /* transform: translateY(-50%); */
   transition: opacity 0.5s ease-in-out;
 }
-ul li.col-2-li::before:hover {
-  opacity: 1;
-  margin-left: 20px;
+
+ul li.col-2-li:hover::before {
+  display: block;
+  /* margin-right: 20px; */
 }
 
 /* 

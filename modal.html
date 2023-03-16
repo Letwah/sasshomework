@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Modal</title>
+
+    <style>
+      body {
+        font-family: "Courier New", Courier, monospace;
+      }
+
+      h1 {
+        color: blue;
+        text-align: center;
+        margin: 8px 0;
+      }
+
+      .button {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        width: 2vw;
+        /* margin: 100px auto; */
+        background-color: lightcoral;
+        padding: 35px;
+
+        border-radius: 5px;
+      }
+
+      .button a {
+        text-decoration: none;
+      }
+
+      .overlay {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        transition: 1s ease-in-out;
+        right: -100vw;
+
+        background-color: rgb(112, 112, 112);
+        opacity: 1;
+      }
+
+      .overlay:target {
+        /* visibility: visible;
+        opacity: 1;
+         */
+
+        right: 0;
+      }
+
+      .popup {
+        margin: 70px auto;
+        background-color: rgb(155, 109, 109);
+        border-radius: 20px;
+        width: 30%;
+        position: relative;
+        transition: 1s ease-in-out;
+      }
+
+      .popup > .close {
+        position: sticky;
+        top: 20px;
+        right: 20px;
+        opacity: 1;
+      }
+
+      .popup > .close:target {
+        opacity: 1;
+      }
+
+      /*       
+      .popup > a.close {
+        opacity: 0;
+      }
+
+      .popup > a.close:target {
+        opacity: 1;
+      } */
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <a class="button" href="#popup">Pop Up</a>
+    </div>
+
+    <div id="popup" class="overlay">
+      <div class="popup">
+        <h1>Here I am</h1>
+        <a class="close" href="#">&times;</a>
+        <div class="content">This is the content, hit the x to close.</div>
+      </div>
+    </div>
+  </body>
+</html>

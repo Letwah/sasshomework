@@ -206,7 +206,7 @@ ul li {
   align-items: flex-end;
 }
 
-div.header-button button {
+div.header-button div {
   grid-column: 4;
   font-family: "Neue Montreal", sans-serif;
   font-weight: 400;
@@ -224,12 +224,34 @@ div.header-button button {
 }
 
 @media screen and (min-width: 800px) {
-  div.header-button button {
+  div.header-button div {
     font-size: 1.1vw;
     padding: 8.4px 16.8px 8.4px 16.8px;
     border-radius: 0.6vw;
   }
 }
+.popup-layer {
+  display: none;
+  color: white;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  background-color: magenta;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+input:checked ~ .popup-layer {
+  position: absolute;
+  right: 1500vw;
+  overflow: hidden;
+}
+
+.header-button input {
+  visibility: hidden;
+}
+
 .separator {
   width: 92vw;
   display: flex;
