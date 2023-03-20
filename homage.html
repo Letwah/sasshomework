@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./styles/mobilesass.css" />
+    <link rel="stylesheet" href="/styles/homage.css" />
 
     <title>Homage SASS mob</title>
   </head>
@@ -20,7 +20,160 @@
           </div>
 
           <div class="header-button-mobile">
-            <button><div>CONTACT</div></button>
+            <button><a class="menu" href="#popup-menu">CONTACT</a></button>
+          </div>
+
+          <div id="popup-menu" class="overlay">
+            <div class="popup-menu">
+              <button><a class="menu" href="#">CLOSE</a></button>
+
+              <div class="separator-mobile">
+                <div class="separator-icon">
+                  <img src="./assets/plus-grey.svg" alt="plus" />
+                </div>
+
+                <span class="separator-line"></span>
+
+                <div class="separator-icon">
+                  <img src="./assets/plus-grey.svg" alt="plus" />
+                </div>
+              </div>
+              <div class="content">
+                <h2>PROJECT INQUIRY</h2>
+                <div>
+                  <p>
+                    Hey! We'd love to learn about what you're working towards to
+                    ensure we're a good fit. As a next step, please review the
+                    details below and submit our "Ship It" form.
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <b>Timing.</b> We're an independent creative studio
+                    dedicated to top-caliber outcomes, so we work with full
+                    devotion for a few select clients at a time such that
+                    inquiries with rushed timelines are generally not possible.
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <b>Scope.</b> We mostly focus on brand strategy, visual
+                    identity, website design and development, and campaigns.
+                    We're open to other requests (!) but generally want to work
+                    on the biggest opportunities — we don’t often take on
+                    projects needing quick fixes or incremental improvements.
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    <b>Budget.</b> Budgets vary based on deliverables,
+                    timelines, and stakes. Our smallest engagements typically
+                    begin at $80k and more comprehensive offerings can extend up
+                    to $250k+. If your expectations are different, please don't
+                    be discouraged from continuing the conversation and sharing
+                    any budget limitations.
+                  </p>
+                </div>
+                <div>
+                  <p>
+                    If you have questions or are unsure if we're a fit, please
+                    don't hesitate to reach out.
+                  </p>
+                </div>
+
+                <form
+                  class="contact-form"
+                  id="de44d66e-443e-4708-beb5-538221a0e90c"
+                >
+                  <div class="input-fields_wrapper__yOeOH">
+                    <label
+                      for="firstname"
+                      class="input-fields_label__OZ3Ib p-xs text-uppercase text-muted"
+                      >Your Name *</label
+                    ><input
+                      type="single_line_text"
+                      id="firstname"
+                      class="input-fields_input__bUDDv"
+                      placeholder="Type Here"
+                      required=""
+                      value=""
+                    />
+                  </div>
+                  <div class="input-fields_wrapper__yOeOH">
+                    <label
+                      for="email"
+                      class="input-fields_label__OZ3Ib p-xs text-uppercase text-muted"
+                      >Your Email *</label
+                    ><input
+                      type="email"
+                      id="email"
+                      class="input-fields_input__bUDDv"
+                      placeholder="Type Here"
+                      required=""
+                      value=""
+                    />
+                  </div>
+                  <div class="input-fields_wrapper__yOeOH">
+                    <label
+                      for="company"
+                      class="input-fields_label__OZ3Ib p-xs text-uppercase text-muted"
+                      >Company Name *</label
+                    ><input
+                      type="single_line_text"
+                      id="company"
+                      class="input-fields_input__bUDDv"
+                      placeholder="Type Here"
+                      required=""
+                      value=""
+                    />
+                  </div>
+                  <div class="input-fields_project">
+                    <label
+                      for="project_type"
+                      class="p-xs text-muted text-uppercase input-fields_label__OZ3Ib"
+                      >Project Type *</label
+                    ><label class="input-fields_checkbox" for="Brand"
+                      ><input
+                        id="Brand"
+                        type="checkbox"
+                        name="project_type"
+                        value="Brand"
+                      /><span>Brand</span></label
+                    ><label class="input-fields_checkbox" for="Website"
+                      ><input
+                        id="Website"
+                        type="checkbox"
+                        name="project_type"
+                        value="Website"
+                      /><span>Website</span></label
+                    ><label class="input-fields_checkbox" for="Art Direction"
+                      ><input
+                        id="Art Direction"
+                        type="checkbox"
+                        name="project_type"
+                        value="Art Direction"
+                      /><span>Art Direction</span></label
+                    ><label class="input-fields_checkbox" for="Campaign"
+                      ><input
+                        id="Campaign"
+                        type="checkbox"
+                        name="project_type"
+                        value="Campaign"
+                      /><span>Campaign</span></label
+                    ><label class="input-fields_checkbox7" for="Other"
+                      ><input
+                        id="Other"
+                        type="checkbox"
+                        name="project_type"
+                        value="Other"
+                      /><span>Other</span></label
+                    >
+                  </div>
+
+                  <button class="form-submit" type="submit">Ship It</button>
+                </form>
+              </div>
+            </div>
           </div>
         </nav>
         <div class="separator-mobile">
@@ -165,7 +318,7 @@
             </div>
           </marquee>
           <div class="header-button">
-            <button>CONTACT</button>
+            <button><a class="menu" href="#popup-menu">CONTACT</a></button>
           </div>
         </nav>
         <div class="separator">
@@ -632,6 +785,14 @@
             </div>
           </section>
         </div>
+        <!-- gallery only seen when click on project list -->
+        <!-- <div class="gallery">
+          <button class="gallery-close">
+            <div class="gallery-scroll"></div>
+          </button>
+        </div> -->
+
+        <!-- end gallery -->
       </main>
 
       <footer>
@@ -652,8 +813,11 @@
             <ul class="footer-grid-mob">
               <div class="mob-footer-1">
                 <div class="muted">
-                  <p>BUILT ON PRINCIPLE</p>
-                  <p>© 2023</p>
+                  <span
+                    ><p>BUILT ON PRINCIPLE</p>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <p>© 2023</p></span
+                  >
                 </div>
               </div>
               <div class="mob-footer-2">

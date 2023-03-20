@@ -11,8 +11,8 @@
   <body>
     <div class="noise">
       <div class="flex-container">
-        <header class="header-container">
-          <nav class="header-top">
+        <header class="header-container-desktop">
+          <nav class="header-top-desktop">
             <div class="icons">
               <a><img src="./assets/stard-1.svg" alt="stard" /></a>
               <a><img src="./assets/sf-monogram-1.svg" alt="sf-monogram" /></a>
@@ -22,7 +22,7 @@
               /></a>
             </div>
             <marquee
-              class="header-marquee"
+              class="header-marquee-desktop"
               behavior="scroll"
               direction="left"
               onmouseover="this.stop();"
@@ -89,7 +89,7 @@
             </div>
           </div>
 
-          <div class="header-title">
+          <div class="header-title-desktop">
             <h1>STUDIO FREIGHT</h1>
           </div>
 
@@ -296,10 +296,10 @@
 
                     <li class="col-2-li">
                       <!-- ::before -->
-                      <div class="button-list">
+                      <button class="button-list">
                         <p class="p-bold-col2">BATTLEFACE</p>
                         <p class="p-bold-col2-sm">INSURANCE</p>
-                      </div>
+                      </button>
                     </li>
                   </ul>
                 </div>
@@ -309,7 +309,7 @@
               <div class="col3-title">
                 <h2>Project detail</h2>
                 <div class="project-actions">
-                  <button class="project-actions-button">INFO</button>
+                  <a class="project-actions-link">INFO</a>
                   <a
                     class="project-actions-link"
                     href="https://drivecapital.com/"
@@ -444,71 +444,77 @@
           </div>
         </main>
 
-        <footer class="footer-container">
-          <div class="separator">
-            <div class="separator-icon">
-              <img src="./assets/plus-grey.svg" alt="plus" />
+        <footer>
+          <div class="footer-container">
+            <div class="separator">
+              <div class="separator-icon">
+                <img src="./assets/plus-grey.svg" alt="plus" />
+              </div>
+
+              <span class="separator-line"></span>
+
+              <div class="separator-icon">
+                <img src="./assets/plus-grey.svg" alt="plus" />
+              </div>
             </div>
 
-            <span class="separator-line"></span>
+            <div class="footer-body">
+              <p class="muted">BUILT ON PRINCIPLE</p>
+              <ul class="footer-grid">
+                <li>
+                  <a
+                    class="footer-links"
+                    href="https://github.com/studio-freight"
+                    ><p>GITHUB</p></a
+                  >
+                </li>
+                <li>
+                  <a class="footer-links" href="https://lenis.studiofreight.com"
+                    ><p>LENIS</p></a
+                  >
+                </li>
 
-            <div class="separator-icon">
-              <img src="./assets/plus-grey.svg" alt="plus" />
+                <li>
+                  <a
+                    class="footer-links"
+                    href="https://www.awwwards.com/studiofreight"
+                    ><p>AWWWARDS</p></a
+                  >
+                </li>
+                <li>
+                  <a
+                    class="footer-links"
+                    href="https://twitter.com/studiofreight"
+                    ><p>TWITTER</p></a
+                  >
+                </li>
+
+                <li>
+                  <a
+                    class="footer-links"
+                    href="https://www.instagram.com/studio.freight"
+                    ><p>INSTAGRAM</p></a
+                  >
+                </li>
+                <li>
+                  <a class="footer-links" href="https://vimeo.com/studiofreight"
+                    ><p>VIMEO</p></a
+                  >
+                </li>
+
+                <li>
+                  <a class="footer-links" href="tel:01 380.238.9363"
+                    ><p>p: +1 380.238.9363</p></a
+                  >
+                </li>
+                <li>
+                  <a class="footer-links" href="mailto:hello@studiofreight.com"
+                    ><p>HELLO@STUDIOFREIGHT.COM</p></a
+                  >
+                </li>
+              </ul>
+              <p class="muted">© 2023</p>
             </div>
-          </div>
-
-          <div class="footer-body">
-            <p class="muted">BUILT ON PRINCIPLE</p>
-            <ul class="footer-grid">
-              <li>
-                <a class="footer-links" href="https://github.com/studio-freight"
-                  ><p>GITHUB</p></a
-                >
-              </li>
-              <li>
-                <a class="footer-links" href="https://lenis.studiofreight.com"
-                  ><p>LENIS</p></a
-                >
-              </li>
-
-              <li>
-                <a
-                  class="footer-links"
-                  href="https://www.awwwards.com/studiofreight"
-                  ><p>AWWWARDS</p></a
-                >
-              </li>
-              <li>
-                <a class="footer-links" href="https://twitter.com/studiofreight"
-                  ><p>TWITTER</p></a
-                >
-              </li>
-
-              <li>
-                <a
-                  class="footer-links"
-                  href="https://www.instagram.com/studio.freight"
-                  ><p>INSTAGRAM</p></a
-                >
-              </li>
-              <li>
-                <a class="footer-links" href="https://vimeo.com/studiofreight"
-                  ><p>VIMEO</p></a
-                >
-              </li>
-
-              <li>
-                <a class="footer-links" href="tel:01 380.238.9363"
-                  ><p>p: +1 380.238.9363</p></a
-                >
-              </li>
-              <li>
-                <a class="footer-links" href="mailto:hello@studiofreight.com"
-                  ><p>HELLO@STUDIOFREIGHT.COM</p></a
-                >
-              </li>
-            </ul>
-            <p class="muted">© 2023</p>
           </div>
         </footer>
       </div>

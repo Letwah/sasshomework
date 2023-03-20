@@ -143,10 +143,10 @@ p.p-bold-col2-sm {
   }
 }
 
-img {
-  /*  To contain the image to the confines of the div  */
-  max-width: 92vw;
-}
+// img {
+//   /*  To contain the image to the confines of the div  */
+//   max-width: 92vw;
+// }
 
 button.button-list p.p-bold-col2-sm,
 .project-actions-link {
@@ -319,7 +319,8 @@ ul {
     font-size: 5vw;
     font-weight: 700;
     margin: 0 0 0 0;
-    border: solid 1px $accent;
+    border: none;
+    // border: solid 1px $accent;
     color: $accent;
     background-color: transparent;
     text-align: end;
@@ -328,11 +329,213 @@ ul {
     border-radius: 2vw;
   }
 
-  button:hover {
+  // button:hover {
+  //   // background-color: $accent;
+  // }
+  a.menu {
+    color: $accent;
+    text-decoration: none;
+    transition: all 0.2s ease-in;
+  }
+
+  a.menu:hover {
     color: $black;
-    background-color: $accent;
+    // background-color: $accent;
   }
 }
+
+// poput menu
+
+.overlay {
+  overflow: hidden;
+  width: 100vw;
+  height: auto;
+  position: fixed;
+  transition: 1s ease-in-out;
+  right: -100vw;
+  top: 0;
+  bottom: 0;
+  background-color: $black;
+  opacity: 1;
+
+  z-index: 99;
+}
+
+.overlay:target {
+  transition: 1s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.popup-menu {
+  margin: 2vw;
+  padding: 3vw;
+  background-color: $black;
+
+  height: 170vw;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  position: relative;
+  transition: 1s ease-in-out;
+
+  // border: 1px solid white;
+
+  font-size: 4.27vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 125%;
+  letter-spacing: 0.01em;
+}
+
+.popup-menu > .close {
+  position: sticky;
+  top: 100px;
+  left: 20px;
+  opacity: 1;
+}
+
+.popup-menu > .close:target {
+  position: fixed;
+  top: 3vw;
+  right: 3vw;
+  opacity: 1;
+  width: 5vw;
+}
+
+.header-button-mobile button,
+.popup-menu button {
+  background-color: transparent;
+  // border: none;
+  position: relative;
+
+  a.menu {
+    @include body;
+    font-size: 5vw;
+    font-weight: 700;
+    margin: 0 0 0 0;
+    border: solid 1px $accent;
+    color: $accent;
+    background-color: transparent;
+    text-align: end;
+    text-decoration: none;
+
+    padding: 1vw 2vw;
+    border-radius: 2vw;
+  }
+  a.menu:hover {
+    background-color: $accent;
+    color: $black;
+  }
+}
+
+.popup-menu button {
+  margin-bottom: 4vw;
+  border: none;
+  left: 75%;
+  top: 2vw;
+}
+
+.popup-menu {
+  .separator-mobile {
+    width: 92vw;
+  }
+}
+
+// form
+
+.contact-form {
+  // display: grid;
+  // grid-template-columns: 1fr 1fr;
+  // grid-column-gap: 1.7vw;
+  // column-gap: 1.7vw; - for desktop
+
+  display: inherit;
+  background-color: black;
+  color: white;
+
+  font-family: "Neue Montreal", sans-serif;
+}
+.input-fields_label__OZ3Ib.p-xs.text-uppercase.text-muted {
+  font-family: "Messina Sans", monospace;
+  font-size: 2vw;
+}
+
+.input-fields_project .input-fields_checkbox span {
+  width: fit-content;
+  padding: 1vw 1vw;
+  border-radius: 1.6vw;
+  display: inline-block;
+  text-transform: uppercase;
+  border: 1px solid;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.input-fields_input__bUDDv {
+  @include headfont;
+  color: $grey;
+  font-size: 4vw;
+  line-height: 140%;
+  font-size: 4vw;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+
+  width: 100%;
+  background: transparent;
+
+  border: 1px solid;
+  display: flex;
+  justify-content: space-between;
+
+  box-shadow: inset 0 0 0 1000px transparent;
+  padding: 4vw 4.3vw;
+  height: 12.8vw;
+  border-radius: 2.7vw;
+  grid-column: span 1;
+
+  margin-bottom: 1.7vw;
+
+  flex-direction: column;
+  align-items: flex-start;
+
+  position: relative;
+}
+
+@media screen and (min-width: 800px) {
+}
+
+form {
+  button.form-submit {
+    @include headfont;
+
+    font-size: 4vw;
+    line-height: 140%;
+    font-size: 4vw;
+    letter-spacing: 0.01em;
+    text-transform: uppercase;
+    border: 1px solid;
+    border-radius: 2.7vw;
+    padding: 4vw 4.3vw;
+
+    color: $accent;
+
+    margin-top: 2vw;
+    width: 90vw;
+    position: relative;
+    left: 0;
+  }
+
+  button.form-submit:hover {
+    background-color: $accent;
+    color: $black;
+  }
+}
+
+// poput menu end
 
 @media screen and (min-width: 800px) {
   .header-top-desktop {
@@ -344,20 +547,6 @@ ul {
     padding-bottom: 0.2vw;
     align-items: center;
   }
-
-  // .header-marquee-desktop {
-  //   grid-column: 5/8;
-  //   display: inline-block;
-  //   overflow: hidden;
-  //   text-align: initial;
-  //   white-space: nowrap;
-  //   transition: filter 0.3s ease-in-out;
-  //   filter: blur(1.5px);
-  // }
-
-  // .header-marquee-destop:hover {
-  //   filter: blur(0px);
-  // }
 
   .header-top-desktop {
     div.header-button {
@@ -373,8 +562,17 @@ ul {
       }
 
       button:hover {
-        color: $black;
         background-color: $accent;
+      }
+      a.menu {
+        color: $accent;
+        text-decoration: none;
+        transition: all 0.2s ease-in;
+      }
+
+      a.menu:hover {
+        color: $black;
+        // background-color: $accent;
       }
     }
   }
@@ -383,12 +581,6 @@ ul {
     padding-top: 0px;
   }
 }
-
-// .header-button {
-//   input {
-//     visibility: hidden;
-//   }
-// }
 
 // STYLE THE SEPARATOR
 
@@ -511,12 +703,20 @@ span.header-marquee-separator {
     overflow: hidden;
     text-align: initial;
     white-space: nowrap;
-    transition: filter 0.3s ease-in-out;
-    filter: blur(1.5px);
   }
 
-  .header-marquee-destop:hover {
-    filter: blur(0px);
+  .header-marquee-desktop:hover {
+    filter: none;
+  }
+
+  .h2-header-marquee {
+    filter: blur(1.5px);
+    transition: filter 0.3s ease-in-out;
+  }
+
+  .h2-header-marquee:hover {
+    filter: blur(0);
+    transition: filter 0.3s ease-in-out;
   }
 
   .h2-header-marquee {
@@ -719,6 +919,13 @@ div.image-mobile-1 {
   position: relative;
   width: 100vw;
   margin: 0;
+  left: 0;
+}
+
+div.image-mobile-2 img,
+div.image-mobile-3 img,
+div.image-mobile-1 img {
+  width: 100vw;
 }
 
 div.image-mobile-2::after,
@@ -744,6 +951,7 @@ div.image-mobile-1::after {
 
 div.image-mobile-3 {
   margin-top: 100px;
+  bottom: 0;
 }
 
 @media screen and (max-width: 799px) {
@@ -848,12 +1056,28 @@ desktop col 3 only  */
   }
 }
 
+//gallery only seen when click on project list
+.gallery {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .gallery {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    height: 100%;
+    padding: 12vh 13vw;
+    display: flex;
+    transition: opacity 0.5s;
+  }
+}
+
 // FOOTER YO!
 
 .footer-container-mob {
   display: block;
   width: 92vw;
-  height: 100vh;
 }
 
 .footer-grid-mob {
@@ -886,11 +1110,11 @@ a.project-actions-link {
   line-height: 3em;
 }
 
-.muted {
+.muted span p {
+  display: inline;
   color: $grey;
-  display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  white-space: nowrap;
 }
 
 div.mob-footer-1 {
@@ -949,17 +1173,6 @@ ul div.mob-footer-4 {
       margin: 0.5vw 0.5vw 0 0.5vw;
     }
   }
-
-  // footer.separator {
-  //   display: grid;
-  //   grid-column: span 8;
-  //   margin: 0 0.5vw 0 0.5vw;
-  //   flex-grow: 1;
-  //   flex-shrink: 1;
-  //   flex-basis: 0%;
-  //   height: 1px;
-  //   background-color: grey;
-  // }
 
   .footer-grid {
     width: 100vw;
