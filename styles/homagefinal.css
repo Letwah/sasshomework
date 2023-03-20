@@ -285,13 +285,13 @@ ul li {
 }
 
 .overlay:target {
-  transition: 1s ease-in-out;
   visibility: visible;
   opacity: 1;
   right: 0;
   top: 0;
   bottom: 0;
   left: 0;
+  transition: 1s ease-in-out;
 }
 
 .popup-menu {
@@ -445,8 +445,21 @@ button.form-submit {
     padding: 1vw 1.5vw;
     flex-direction: row;
   }
-  .overlay:target {
+  .overlay {
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
     width: 50%;
+    left: 100%;
+  }
+  .overlay:target {
+    transition: 1s ease-in-out;
+    visibility: visible;
+    opacity: 1;
+    right: 10vw;
+    top: 0;
+    bottom: 0;
     left: 50%;
   }
   .popup-menu p {
@@ -911,10 +924,10 @@ div.image-mobile-3 {
     display: flex;
     transition: opacity 0.5s;
   }
-  a img.hometrigger {
+  .trigger {
     width: 1.7vw;
-    position: fixed;
-    top: 0;
+    position: absolute;
+    bottom: 0;
     z-index: 20;
   }
 }

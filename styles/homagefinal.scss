@@ -362,13 +362,13 @@ ul {
 }
 
 .overlay:target {
-  transition: 1s ease-in-out;
   visibility: visible;
   opacity: 1;
   right: 0;
   top: 0;
   bottom: 0;
   left: 0;
+  transition: 1s ease-in-out;
 }
 
 .popup-menu {
@@ -540,9 +540,22 @@ button.form-submit {
 
     flex-direction: row;
   }
+  .overlay {
+    height: auto;
+    position: fixed;
+    bottom: 0;
+    z-index: 99;
+    width: 50%;
+    left: 100%;
+  }
 
   .overlay:target {
-    width: 50%;
+    transition: 1s ease-in-out;
+    visibility: visible;
+    opacity: 1;
+    right: 10vw;
+    top: 0;
+    bottom: 0;
     left: 50%;
   }
   .popup-menu p {
@@ -1033,14 +1046,6 @@ div.image-mobile-3 {
     top: 10px;
   }
 
-  // .project-actions-button {
-  //   font-family: "Messina Sans Mono", monospace;
-  //   background-color: transparent;
-  //   color: #fffef4;
-  //   border: none;
-  //   font-size: 0.8vw;
-  // }
-
   .project-actions {
     align-self: center;
   }
@@ -1110,10 +1115,10 @@ div.image-mobile-3 {
     transition: opacity 0.5s;
   }
 
-  a img.hometrigger {
+  .trigger {
     width: 1.7vw;
-    position: fixed;
-    top: 0;
+    position: absolute;
+    bottom: 0;
     z-index: 20;
   }
 }
