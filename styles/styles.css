@@ -435,7 +435,7 @@ button.form-submit {
     grid-template-columns: 1fr 1fr;
     grid-column-gap: 1.7vw;
     -moz-column-gap: 1.7vw;
-         column-gap: 1.7vw;
+    column-gap: 1.7vw;
   }
   .input-fields_input__bUDDv {
     font-size: 1vw;
@@ -824,6 +824,7 @@ div.image-mobile-2 img,
 div.image-mobile-3 img,
 div.image-mobile-1 img {
   width: 100vw;
+  margin-left: -2vw;
 }
 
 div.image-mobile-2::after,
@@ -831,7 +832,11 @@ div.image-mobile-3::after,
 div.image-mobile-1::after {
   display: block;
   position: relative;
-  background-image: linear-gradient(to bottom, rgba(255, 0, 0, 0), rgb(0, 0, 0));
+  background-image: linear-gradient(
+    to bottom,
+    rgba(255, 0, 0, 0),
+    rgb(0, 0, 0)
+  );
   margin-top: -150px;
   height: 150px;
   width: 100vw;
@@ -839,6 +844,7 @@ div.image-mobile-1::after {
   color: #00ff6a;
   opacity: 1;
   z-index: 9;
+  margin-left: -2vw;
 }
 
 div.image-mobile-3 {
@@ -895,14 +901,14 @@ div.image-mobile-3 {
   }
   img.full {
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     grid-column: span 2;
     width: 100%;
     max-height: 100%;
   }
   img.half {
     -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
     grid-column: span 1;
     width: 100%;
     max-height: 100%;
@@ -947,7 +953,7 @@ div.image-mobile-3 {
   grid-template-rows: auto;
   row-gap: 4.8vw;
   -moz-column-gap: 4vw;
-       column-gap: 4vw;
+  column-gap: 4vw;
 }
 
 .footer-body-mob {
@@ -1089,4 +1095,4 @@ ul div.mob-footer-4 {
     transform: scaleX(1);
     transform-origin: bottom left;
   }
-}/*# sourceMappingURL=homagefinal.css.map */
+} /*# sourceMappingURL=homagefinal.css.map */
