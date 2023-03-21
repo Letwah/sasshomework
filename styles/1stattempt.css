@@ -1,0 +1,472 @@
+/* Global Styles  */
+
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: "Messina Sans Mono", sans-serif, monospace;
+  src: url("/fonts/MessinaSansMono-Regular.woff2")
+    local("MessinaSansMono-SemiBold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Neue Montreal", sans-serif;
+  src: url("/fonts/NeueMontreal-Regular.woff2")
+    local("NeueMontreal-Regular.woff2") format("woff2");
+}
+
+h1 {
+  font-family: "Neue Montreal", sans-serif;
+  text-align: center;
+  font-size: 11.4666666667vw;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 92%;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  /* stop line wrap */
+  white-space: nowrap;
+
+  margin: 0;
+}
+
+h2 {
+  font-family: "Neue Montreal", sans-serif;
+  line-height: 140%;
+  font-size: 1.3vw;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  color: #929292;
+}
+
+p.p-col-1 {
+  font-family: "Neue Montreal", sans-serif;
+  line-height: 125%;
+  font-size: 1vw;
+  letter-spacing: 0.01em;
+}
+
+button.button-list p.p-bold-col2-sm,
+footer p,
+.project-actions-link {
+  font-family: monospace;
+  margin: 0;
+  font-size: 0.8vw;
+}
+
+/* attempt at sizing arrow next to link in 3rd col  */
+
+a.project-actions-link svg.home_arrow {
+  max-width: 0.5vw;
+}
+
+button.button-list p.p-bold-col2 {
+  font-family: "Neue Montreal", sans-serif;
+  font-weight: 700;
+  font-size: 1.3vw;
+}
+
+ul.p-col-1 {
+  padding-left: 0;
+}
+
+ul li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+}
+
+body {
+  color: #fffef4;
+  background-color: #000;
+  width: calc(100vw - (2 * 1.67vw));
+  margin: 0 1.67vw;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* styling the header  */
+
+.header-container-desktop {
+  display: block;
+  width: 100%;
+  position: relative;
+  /* max-width: calc(100vw - (2 * 4.267vw)); */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.header-top-desktop {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-column-gap: 1.67vw;
+  padding-top: 0.2vw;
+  padding-bottom: 0.2vw;
+  align-items: center;
+}
+
+.icons {
+  grid-column: span 1;
+  grid-column-end: auto;
+  white-space: nowrap;
+}
+
+/* size the icons */
+.icons img {
+  width: 20px;
+  margin: 2px;
+}
+
+.header-marquee-desktop {
+  grid-column: 5/8;
+  display: inline-block;
+  overflow: hidden;
+  text-align: initial;
+  white-space: nowrap;
+  transition: filter 0.3s ease-in-out;
+  filter: blur(1.5px);
+}
+
+.header-marquee-destop:hover {
+  filter: blur(0px);
+}
+
+.h2-header-marquee {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+div.marquee-inner {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+}
+span.header-marquee-separator {
+  margin: 0 1.1111111111vw;
+}
+
+div.header-button button {
+  grid-column: 8/-1;
+  font-family: "Neue Montreal", sans-serif;
+  font-size: 1.1vw;
+  font-weight: 700;
+  margin: 0 0 0 20px;
+  /* padding: 8.4px 16.8px 8.4px 16.8px; */
+  border: solid 1px #00ff6a;
+
+  color: #00ff6a;
+  background-color: transparent;
+  text-align: end;
+  padding: 0.2777777778vw 0.5555555556vw;
+  border-radius: 0.5555555556vw;
+}
+
+.separator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.separator-line {
+  display: flex;
+  margin: 0 0.5vw 0 0.5vw;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  height: 1px;
+  background-color: grey;
+}
+
+.separator-icon {
+  display: flex;
+
+  width: 0.8333333333vw;
+  height: 0.8333333333vw;
+  fill: grey;
+}
+
+/* styling the header title */
+
+div.header-title-desktop {
+  width: 100%;
+  text-shadow: 0 0 10px;
+  font-weight: bolder;
+}
+
+/* 
+MAIN LAYOUT  */
+
+.layout-main {
+  display: flex;
+  overflow: hidden;
+  flex-grow: 1;
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: repeat(8, minmax(0, 1fr));
+  grid-column-gap: 1.67vw;
+}
+
+section.col1 {
+  grid-column: span 2;
+
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 80vh;
+
+  border-right: 1px solid grey;
+  padding-right: 1.6vw;
+}
+
+.col1-title,
+.col2-title,
+.col3-title {
+  display: flex;
+  position: sticky;
+  top: 0;
+  background-color: #000;
+}
+
+div.scrolling {
+  flex-grow: 1;
+  display: block;
+  position: relative;
+  overflow: scroll;
+  height: 80vh;
+  padding-bottom: 4.4444444444vh;
+}
+
+section.col2 {
+  grid-column: span 2;
+  position: relative;
+  overflow: scroll;
+  height: 80vh;
+  padding-bottom: 4.4444444444vh;
+
+  border-right: 1px solid grey;
+  padding-right: 1.6vw;
+}
+
+.projects-list ul {
+  padding-left: 0;
+}
+
+ul li.projects-list {
+  flex-grow: 1;
+  display: block;
+  position: relative;
+  overflow: scroll;
+  height: 80vh;
+  padding-bottom: 4.4444444444vh;
+
+  width: 100%;
+}
+/* attempt at syling pseduo element on hover  */
+ul li.col-2-li::before {
+  display: none;
+  content: "";
+  height: 0.8vw;
+  width: 0.8vw;
+  position: relative;
+  left: 1%;
+  align-items: center;
+  border-radius: 100%;
+  background-color: #00ff6a;
+  filter: blur(3px);
+  /* opacity: 1; */
+  /* transform: translateY(-50%); */
+  transition: opacity 0.5s ease-in-out;
+}
+
+ul li.col-2-li:hover::before {
+  display: block;
+  transform: translateY(-50%);
+}
+
+/* 
+styling the list of projects  */
+button.button-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+
+  background-color: transparent;
+  color: #fffef4;
+  padding: 0;
+  border-top: 1px solid grey;
+  border-right: 0;
+  border-left: 0;
+  border-bottom: 0;
+  transition: color 0.5s ease-out, padding 0.5s ease-out;
+}
+
+button.button-list:hover {
+  color: #00ff6a;
+  transition: all 0.5s ease-in-out;
+  padding-left: 2vw;
+}
+
+section.col3 {
+  grid-column: span 4;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+  height: 80vh;
+  padding-bottom: 4.4444444444vh;
+}
+.col3-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.col3-title h2 {
+  display: flex;
+  position: sticky;
+  top: 10px;
+}
+
+.project-actions-button {
+  font-family: "Messina Sans Mono", monospace;
+  background-color: transparent;
+  color: #fffef4;
+  border: none;
+  font-size: 0.8vw;
+}
+
+a.project-actions-link svg {
+  width: 10px;
+}
+
+a.project-actions-link {
+  font-family: "Messina Sans Mono", monospace;
+  color: #00ff6a;
+}
+
+.project-images-cont {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  grid-gap: 0.5vw;
+  margin-bottom: 0.5vw;
+}
+
+img.full,
+img.half {
+  border-radius: 0.5555555556vw;
+}
+
+img.full {
+  object-fit: cover;
+  grid-column: span 2;
+
+  width: 100%;
+  max-height: 100%;
+}
+
+img.half {
+  object-fit: cover;
+  grid-column: span 1;
+  width: 100%;
+  max-height: 100%;
+  box-sizing: border-box;
+}
+
+a .hometrigger {
+  width: 1.6666666667vw;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+/* FOOTER STUFF YO */
+
+.footer-container {
+  display: block;
+}
+
+footer.separator {
+  display: grid;
+  grid-column: span 8;
+  margin: 0 0.5vw 0 0.5vw;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: 0%;
+  height: 1px;
+  background-color: grey;
+}
+
+.footer-grid {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.footer-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.muted {
+  color: #929292;
+}
+
+a.footer-links,
+a.project-actions-link {
+  color: #fffef4;
+  text-decoration: none;
+  font-family: "Courier New", Courier, monospace;
+  display: inline-block;
+  position: relative;
+
+  transition: transform 0.25s ease-out;
+}
+
+a.footer-links:hover,
+a.project-actions-link:hover {
+  color: #00ff6a;
+}
+
+a.footer-links::after,
+a.project-actions-link::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #00ff6a;
+  transform-origin: bottom right;
+  transition: transform 0.4s ease-out;
+}
+
+a.footer-links:hover::after,
+a.project-actions-link:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+/* For mobile phones:
+@media only screen and (max-width: 800px) {
+  div.container {
+  }
+}
+
+For desktop: 
+@media only screen and (min-width: 800px) {
+  div.container {
+  }
+} */
