@@ -79,7 +79,7 @@ $display-off: none;
 h1 {
   @include headfont;
   color: $white;
-  font-size: 11.8vw;
+  font-size: 11.6vw;
   text-align: center;
   font-style: normal;
   font-weight: 900;
@@ -97,7 +97,6 @@ h2 {
   color: $grey;
   font-size: 4vw;
   line-height: 140%;
-  font-size: 4vw;
   letter-spacing: 0.01em;
   text-transform: uppercase;
 }
@@ -525,21 +524,7 @@ button.form-submit {
 }
 
 @media screen and (min-width: 800px) {
-  form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1.7vw;
-    column-gap: 1.7vw;
-  }
-  .input-fields_input__bUDDv {
-    font-size: 1vw;
-    margin-bottom: 0;
-    border-radius: 1.7vw;
-    height: 1vw;
-    padding: 1vw 1.5vw;
-
-    flex-direction: row;
-  }
+  // desktop popout
   .overlay {
     height: auto;
     position: fixed;
@@ -565,6 +550,11 @@ button.form-submit {
   }
 
   form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1.7vw;
+    column-gap: 1.7vw;
+
     .input-fields_label__OZ3Ib.p-xs.text-uppercase.text-muted {
       font-size: 1vw;
     }
@@ -573,6 +563,15 @@ button.form-submit {
       background-color: $accent;
       color: $black;
     }
+  }
+  .input-fields_input__bUDDv {
+    font-size: 1vw;
+    margin-bottom: 0;
+    border-radius: 1.7vw;
+    height: 1vw;
+    padding: 1vw 1.5vw;
+
+    flex-direction: row;
   }
 }
 
@@ -793,9 +792,9 @@ span.header-marquee-separator {
     flex-direction: row;
     white-space: nowrap;
   }
-  span.header-marquee-separator {
-    margin: 0 1.1111111111vw;
-  }
+  // span.header-marquee-separator {
+  //   margin: 0 1.1111111111vw;
+  // }
 }
 /* end marquee */
 
@@ -846,6 +845,8 @@ div.scrolling {
   display: block;
   position: relative;
   padding-bottom: 4.5vh;
+  overflow: scroll;
+  height: 80vh;
 }
 
 section.col2 {
@@ -862,16 +863,16 @@ section.col2 {
   flex-direction: column;
 }
 
-ul li.projects-list {
-  display: flex;
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: scroll;
-  height: 80vh;
-  padding-bottom: 4.5vh;
+// ul li.projects-list {
+//   display: flex;
+//   position: relative;
+//   overflow-x: hidden;
+//   overflow-y: scroll;
+//   height: 80vh;
+//   padding-bottom: 4.5vh;
 
-  width: 100%;
-}
+//   width: 100%;
+// }
 
 @media screen and (min-width: 800px) {
   section.col1 {
@@ -1004,6 +1005,7 @@ div.image-mobile-1::after {
   );
 
   margin-top: -150px;
+  margin-left: -2vw;
   height: 150px;
   width: 100vw;
   content: "";
@@ -1105,28 +1107,28 @@ div.image-mobile-3 {
 
 //gallery only seen when click on project list
 
-@media screen and (max-width: 800px) {
-  .gallery {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    height: 100%;
-    padding: 12vh 13vw;
-    display: flex;
-    transition: opacity 0.5s;
-  }
+// @media screen and (max-width: 800px) {
+//   .gallery {
+//     position: fixed;
+//     inset: 0;
+//     z-index: 1;
+//     height: 100%;
+//     padding: 12vh 13vw;
+//     display: flex;
+//     transition: opacity 0.5s;
+//   }
 
-  .trigger {
-    width: 1.7vw;
-    position: absolute;
-    bottom: 0;
-    z-index: 20;
-  }
-}
+//   .trigger {
+//     width: 1.7vw;
+//     position: absolute;
+//     bottom: 0;
+//     z-index: 20;
+//   }
+// }
 
-.gallery {
-  display: none;
-}
+// .gallery {
+//   display: none;
+// }
 
 // FOOTER YO!
 
